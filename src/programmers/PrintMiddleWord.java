@@ -19,7 +19,7 @@ public class PrintMiddleWord {
         
     	return result;    
     }
-    // �Ʒ��� �׽�Ʈ�� ����� ���� ���� �ڵ��Դϴ�.
+    // 실행을 위한 메인 함수
     public static void  main(String[] args){
     	PrintMiddleWord se = new PrintMiddleWord();
         System.out.println(se.getMiddle("power"));

@@ -1,4 +1,4 @@
-package backjoon;
+package programmers;
 
 public class PrintTriangle {
 	public String printTriangle(int num){
