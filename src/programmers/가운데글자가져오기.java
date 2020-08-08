@@ -5,12 +5,12 @@ package programmers;
  */
 
 
-public class PrintMiddleWord {
+public class 가운데글자가져오기 {
     String getMiddle(String word){
         int length=word.length();
         String result;
         if(length%2==0){
-            result=word.substring(length/2-1, length/2+1 );
+            result=word.substring(length/2-1, length/2+1 ); //substring(이상, 미만)
         }
         
         else{
@@ -21,7 +21,7 @@ public class PrintMiddleWord {
     }
     // 실행을 위한 메인 함수
     public static void  main(String[] args){
-    	PrintMiddleWord se = new PrintMiddleWord();
+    	가운데글자가져오기 se = new 가운데글자가져오기();
         System.out.println(se.getMiddle("power"));
     }
 }
