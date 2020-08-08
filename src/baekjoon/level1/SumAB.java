@@ -1,4 +1,4 @@
-package backjoon.level1;
+package baekjoon.level1;
 import java.util.Scanner;
 
 public class SumAB {
@@ -10,8 +10,7 @@ public class SumAB {
         b = scan.nextInt();
 
         if(0 < a && b <10) {
-            int result = a + b;
-            System.out.println(result);
+            System.out.println(a+b);
         }
     }
 }

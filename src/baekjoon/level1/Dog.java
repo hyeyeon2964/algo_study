@@ -1,4 +1,4 @@
-package backjoon.level1;
+package baekjoon.level1;
 
 public class Dog {
 
