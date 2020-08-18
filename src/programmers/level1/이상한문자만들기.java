@@ -7,9 +7,34 @@ package programmers.level1;
 public class 이상한문자만들기 {
     public static String solution(String s) {
 
+        String answer = "";
+        char[] arr = s.toCharArray();
+        int j = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+
+            if(arr[i] == ' ') {
+                j = 0;
+            }
+            else if (j%2 ==0 &&('a' <= arr[i] && arr[i] <= 'z')) {
+                arr[i] -= 32;
+                j++;
+            }
+            else if(j%2 ==1 &&('A' <= arr[i] && arr[i] <= 'Z')) {
+                arr[i] += 32;
+                j++;
+            }
+            else
+                j++;
+
+        }
+        answer = new String(arr);
+
+
+        return answer;
     }
 
     public static void main(String[] args) {
-        System.out.println(solution("abc ABC"));
+        System.out.println(solution("   aaa  bbb cc  "));
     }
 }
