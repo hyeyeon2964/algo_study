@@ -17,4 +17,3 @@ public class 별찍기1 {
     }
 
 
-}
