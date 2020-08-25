@@ -1,10 +1,8 @@
 package baekjoon.level3;
-
 import java.io.*;
 import java.util.StringTokenizer;
 
-
-public class A플B마7_11021 {
+public class A플B_11022 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -19,7 +17,7 @@ public class A플B마7_11021 {
             int b = Integer.parseInt(st.nextToken());
 
             result = a+b;
-            bw.write("Case #"+ index + ": "+ result + "\n");
+            bw.write("Case #"+ index + ": " + a+ " + "+ b + " = " + result + "\n");
             index++;
         }
         bw.flush();
