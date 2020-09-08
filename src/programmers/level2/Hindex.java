@@ -1,34 +1,30 @@
 package programmers.level2;
 
 
+import java.util.Arrays;
+
 public class Hindex {
     public int solution(int[] citations) {
         int answer = 0;
-
-        int max = 0;
-        int min = 0;
-        int hIndex = 0;
-        int i = 0;
-        while(true) {
-            max = 0;
-            min = 0;
-            i =0;
-
-            if(citations[i] >= hIndex){
-                max++;
-                i++;
+        Arrays.sort(citations);
+        int h;
+        int l;
+        while (true){
+            h= 0;
+            l = 0;
+            for(int i = 0; i< citations.length; i++){
+                if(answer <= citations[i]){
+                    h++;
+                }
+                else if(answer >= citations[i]){
+                    l++;
+                }
             }
-            else if(citations[i] <= hIndex){
-                min++;
-                i++;
-            }
-            else if(i == citations.length-1)
-                hIndex++;
-
-            if(hIndex > max || hIndex < min)
-                break;
+            if(answer > h || answer <= l)
+                return answer;
+            else
+                answer++;
 
         }
-        return hIndex;
     }
 }
