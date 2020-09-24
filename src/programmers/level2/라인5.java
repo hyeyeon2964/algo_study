@@ -2,7 +2,7 @@ package programmers.level2;
 
 public class 라인5 {
     public static String[] solution(String[][] dataSource, String[] tags){
-        String[] answer;
+        String[] answer = {};
         int[] arr = new int[dataSource.length];
 
         for(int i = 0; i<dataSource.length; i++){
@@ -15,7 +15,6 @@ public class 라인5 {
 
             }
         }
-
-
+        return answer;
     }
 }
