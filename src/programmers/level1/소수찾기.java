@@ -15,20 +15,24 @@ public class 소수찾기 {
         }
 
         for(int i = 2; i<= Math.sqrt(n); i++){
-                for(int j = 2; i*j<=n; j++){
-                    arr[i*j] = 0;
+                if(arr[i] != 0)
+                {
+                    for(int j = i * i; j <= n; j += i) {
+                        arr[j] = 0;
+                    }
                 }
         }
 
-        for(int i=0; i<n; i++){
-            if(arr[i] != 0)
+        for(int i=0; i<n+1; i++){
+            if(arr[i] != 0) {
                 answer++;
+            }
         }
 
-        return answer - 2;
+        return answer;
     }
 
     public static void main(String[] args) {
-        System.out.println(solution(10));
+        System.out.println(solution(5));
     }
 }
