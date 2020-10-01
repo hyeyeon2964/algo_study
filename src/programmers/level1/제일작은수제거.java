@@ -10,25 +10,22 @@ import java.util.*;
 public class 제일작은수제거 {
     public int[] solution(int[] arr) {
         int[] answer;
-        if(arr.length == 1){
+        if(arr.length == 1){ //길이가 1일때 -1 리턴
             answer = new int[1];
             answer[0] = -1;
             return answer;
-
         }
-        int min = Arrays.stream(arr).min().getAsInt();
 
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i : arr) {
-            if (i != min)
-                list.add(i);
-        }
-        answer = new int[list.size()];
-        int index = 0;
-        for (int i = 0; i < answer.length; i++) {
-            if (arr[i] != min)
-                answer[index++] = arr[i];
+        for (int i : arr)
+                list.add(i); //ArrayList에 arr담기
+        Arrays.sort(arr);
+        list.remove((Integer)arr[0]); //제일 작은수 list에서 제거
 
+        answer = new int[list.size()];
+        int size =0;
+        for(int i : list){
+            answer[size++] = i;
         }
         return answer;
     }
