@@ -14,8 +14,6 @@ public class _11st3 { //2번
         }
         for(int i = 0; i<S.length; i++){
             for(int j = i+1; j< S.length; j++){
-                if(i==j)
-                    continue;
                 for(int k = 0; k < strLen; k++){
                     if(S[i].charAt(k) == S[j].charAt(k)){
                         answer = new int[3];
