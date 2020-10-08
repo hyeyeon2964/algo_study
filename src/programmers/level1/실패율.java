@@ -11,6 +11,14 @@ public class 실패율 {
         for(int i = 0; i<stages.length; i++){
             int key = stages[i];
             double value;
+            if(key <= N){
+                if(!map.containsKey(key))
+                    value = 0;
+                else
+                    value = map.get(stages[i]);
+                map.put(key, ++value);
+            }
+
         }
 
         return answer;
