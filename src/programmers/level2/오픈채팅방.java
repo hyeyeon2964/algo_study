@@ -7,7 +7,7 @@ public class 오픈채팅방 {
     class Solution {
         public String[] solution(String[] record) {
             String[] answer;
-            int answerIndex = 0;
+            int answerIndex = 0; //answer배열의 크기를 위해 뱐수 생성
             ArrayList<String[]> history = new ArrayList<>(); //들어오고 나감을 기록
             HashMap<String, String> user = new HashMap<>(); //user의 id와 닉네임을 기록
             for(int i = 0; i<record.length; i++)
@@ -15,7 +15,7 @@ public class 오픈채팅방 {
                 String[] information = new String[3];
                 information = record[i].split(" ");
 
-                if (information[0].equals("Enter"))
+                if (information[0].equals("Enter")) //만약 엔터면 map, history에 넣음
                 {
                         user.put(information[1], information[2]);
                         history.add(new String[]{information[0], information[1]});
