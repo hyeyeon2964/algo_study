@@ -3,6 +3,7 @@ package programmers.level2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 public class 오픈채팅방 {
     class Solution {
         public String[] solution(String[] record) {
