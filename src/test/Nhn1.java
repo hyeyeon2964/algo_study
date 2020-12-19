@@ -39,7 +39,7 @@ class Nhn1 {
                 {
                     while (move > players.length )
                     {
-                        move
+                        move = 0;
                     }
                 }
 
