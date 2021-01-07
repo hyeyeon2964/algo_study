@@ -5,6 +5,7 @@ public class 소수찾기 {
         int answer = 0;
         String[] arr = numbers.split("");
 
+
         return answer;
     }
 }
