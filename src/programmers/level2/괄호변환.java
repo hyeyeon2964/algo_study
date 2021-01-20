@@ -1,6 +1,5 @@
 package programmers.level2;
 
-import java.nio.file.ClosedDirectoryStreamException;
 import java.util.Stack;
 
 public class 괄호변환 {
@@ -39,6 +38,12 @@ public class 괄호변환 {
         int index = 1;
         String[] arr = new String[2];
 
+        if(str == "")
+        {
+            arr[0] = "";
+            arr[1] = "";
+            return arr;
+        }
 
         if(str.charAt(0) == '(')
         {
@@ -73,11 +78,16 @@ public class 괄호변환 {
 
         return arr;
     }
-    public static String makeString(String temp ,String u)
+    public static String makeString(String u)
     {
-
-
-        u = u.substring(1, u.length()-1);
+        String temp = "";
+        if(u.length()==2)
+        {
+            return temp;
+        }
+        else {
+            u = u.substring(1, u.length() - 1);
+        }
 
         for(int i = 0; i<u.length(); i++)
         {
@@ -114,7 +124,7 @@ public class 괄호변환 {
             temp = "(";
             temp += change(v);
             temp += ")";
-            temp += makeString(temp ,u);
+            temp += makeString(u);
 
         }
         return temp;
@@ -131,6 +141,8 @@ public class 괄호변환 {
 
     public static void main(String[] args) {
 
-        System.out.println(solution(")("));
+//        System.out.println(solution(")("));
+//        System.out.println(solution("(()())()"));
+        System.out.println(solution("()))((()"));
     }
 }
