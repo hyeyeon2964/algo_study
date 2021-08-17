@@ -1,68 +1,49 @@
 package test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class kyobo1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String input = sc.next();
+        int n = Integer.parseInt(sc.next());
+        int k = Integer.parseInt(sc.next());
 
-        System.out.println( "ANSWER : " +solution(input));
+        if (n < 3) { //"N의 값은 3보다 크거나 같다" 주의사항 예외 처리
+            System.out.println("N의 값은 3보다 크거나 같아야 합니다.");
+            return ;
+        }
+        int[] result = new int[2];
+        result = findStartValue(n, k);
+        System.out.println("ANSWER : "+ Arrays.toString(result));
     }
 
-    public static String solution(String s) {
-        if (s.length() == 1) {
-            return s;
-        }
-
-        String answer = s;
-        //압축가능한 단위의 최대는 길이의 절반이다.
-        for (int cutSize = 1; cutSize <= s.length() / 2; cutSize++)
-        {
-            //압축된 길이의 최소값 찾기
-            String cutString = cut_string(s, cutSize);
-            System.out.println(cutString);
-            if (answer.length() >= cutString.length()) {
-                if (answer != cutString) {
-                    answer = cutString;
-                }
-            }
-        }
-        return answer;
-    }
-
-    private static String cut_string(String s, int cutSize)
+    //a,b는 0을 포함한 자연수라고 가정하고 문제풀이를 진행
+    static int[] findStartValue(int n, int k)
     {
-        String word = s.substring(0, cutSize);; //압축가능한 길이 단위만큼 자른 시작문자열
-        int same = 1; //압축한 갯수
-        StringBuilder sb = new StringBuilder(); //압축된 문자열을 저장할 객체
-
-        for (int i = cutSize; i <= s.length(); i += cutSize)
+        for(int i = 0; i<100; i++) //범위는 임의대로 100으로 정했습니다.
         {
-            String cmp; //압축가능한 길이 단위만큼 자른 다음 문자열
+            for(int j = 1; j<100; j++)
+            {
+                if (fibonacci(i , j, n, k))
+                    return new int[]{i, j};
+            }
+        }
+        System.out.println("입력한 정보가 잘못 되었습니다.");
+        return new int[]{0,0}; //n과 k가 잘못 들어왔을 때 예외처리
+    }
+    static boolean fibonacci(int a, int b, int n, int k)
+    {
+        int value = 0; //수열의 인덱스에 있는 값
 
-            if (i + cutSize >= s.length()) { //자르려는 길이가 s의 길이보다 크거나 같을때
-                cmp = s.substring(i);
-            } else {
-                cmp = s.substring(i, i + cutSize); //현재 위치부터 단위만큼 자른다
-            }
-            if (word.equals(cmp)) { //문자열이 같을때
-                same++;
-            } else {
-                if (same > 1) { //이전에 압축된 문자 처리
-                    sb.append(same + word);
-                } else {
-                    sb.append(word);
-                }
-                word = cmp;
-                same = 1;
-            }
+        for(int i = 3; i <= n; i++)
+        {
+            value = a + b;
+            a = b;
+            b = value;
         }
-        //마지막에 비교된 문자 처리
-        if (same != 1) {
-            sb.append(same);
-        }
-        sb.append(word);
-        return sb.toString(); //압축된 문자열 길이 반환
+        if (value == k) //만약 입력받았던 k와 a,b의 초기값으로 피보나치 수열을 만든 value가 같다면 조건 만족
+            return true;
+        return false;
     }
 }
