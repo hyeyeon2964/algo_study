@@ -28,5 +28,5 @@ public class 유기농배추_1012 {
         }
 
     }
-    public static void init()
+    //public static void init()
 }
