@@ -28,7 +28,7 @@ public class 연결요소의개수_11724 {
             map[a][b] = 1;
             map[b][a] = 1;
         }
-        for(int i = 1; i<n+1; i++){
+        for(int i = 1; i<n+1; i++){ //연결요소가 몇개인지 세기
             if(visit[i] == false) {
                 dfs(i);
                 result++;
