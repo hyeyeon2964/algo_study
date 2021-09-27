@@ -16,6 +16,7 @@ public class 계단오르기_dp {
         for (int i = index; i<=num; i++) {
 
         }
+        return 1;
     }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
