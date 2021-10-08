@@ -3,6 +3,7 @@ package baekjoon.binary_search;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import java.util.StringTokenizer;
 /*
  * [upper bound 방식]
