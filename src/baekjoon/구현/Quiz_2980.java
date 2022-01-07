@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Quiz_2980 {
@@ -37,6 +39,7 @@ public static void main(String[] args) throws IOException {
         int D = Integer.parseInt(st.nextToken());
         int R = Integer.parseInt(st.nextToken());
         int G = Integer.parseInt(st.nextToken());
+
 
     }
 }
