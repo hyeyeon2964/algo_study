@@ -18,7 +18,7 @@ public class 학급회장 {
         }
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
         list.sort(Map.Entry.comparingByValue());
-        System.out.println(list.get(0).getKey());
+        System.out.println(list.get(map.size()-1).getKey());
     }
 
     public static void main(String[] args) throws IOException {
@@ -26,7 +26,6 @@ public class 학급회장 {
         int n = Integer.parseInt(br.readLine());
         String str = br.readLine();
         solution(n, str);
-
 
     }
 }
