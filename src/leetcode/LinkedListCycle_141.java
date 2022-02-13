@@ -11,15 +11,14 @@ class ListNode {
 }
 public class LinkedListCycle_141 {
         public boolean hasCycle(ListNode head) {
-            ArrayList<Integer> list = new ArrayList<>();
-
+            List<ListNode> list = new LinkedList<>();
             if(head == null)
                 return false;
             while(head.next != null) {
-                if (list.contains(head.val))
+                if (list.contains(head))
                     return true;
                 else
-                    list.add(head.val);
+                    list.add(head);
                 head = head.next;
             }
             return false;
